@@ -1,0 +1,10 @@
+---
+
+# ellucian_wgetrc_users:
+    # - name:
+    #   group:
+    #   path:
+
+ellucian_wgetrc_http_user: banner
+# ellucian_wgetrc_http_password:
+ellucian_wgetrc_auth_no_challenge: "on"

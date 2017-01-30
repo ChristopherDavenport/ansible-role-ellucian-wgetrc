@@ -1,0 +1,10 @@
+---
+
+- name: Apply wgetrc to users
+  with_items: "{{ ellucian_wgetrc_users }}"
+  template:
+    src: wgetrc.j2
+    dest: "{{ item.path | default('/home/' + item.name) }}/.wgetrc"
+    owner: "{{ item.name }}"
+    group: "{{ item.group | default(item.name) }}"
+    mode: 0600
