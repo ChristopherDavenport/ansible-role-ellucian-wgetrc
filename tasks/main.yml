@@ -1,5 +1,15 @@
 ---
 
+- name: Make sure wget is installed
+  package:
+    name: wget
+    state: present
+
+- name: Make sure unzip is installed
+  package:
+    name: unzip
+    state: present
+
 - name: Apply wgetrc to users
   with_items: "{{ ellucian_wgetrc_users }}"
   template:
