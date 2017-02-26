@@ -1,14 +1,12 @@
 ---
 
-- name: Make sure wget is installed
+- name: Make sure dependencies are installed
   package:
-    name: wget
+    name: "{{ item }}"
     state: present
-
-- name: Make sure unzip is installed
-  package:
-    name: unzip
-    state: present
+  with_items:
+    - wget
+    - unzip
 
 - name: Apply wgetrc to users
   with_items: "{{ ellucian_wgetrc_users }}"
